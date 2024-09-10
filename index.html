@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Salary Calculator</title>
 </head>
 <body>
@@ -11,10 +11,31 @@
   </header>
   <main>
     <h2>Add Employee</h2>
+    <form id="add-employee-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" name="salary"><br><br>
+      <button type="submit">Add Employee</button>
+    </form>
     <h2>Employees</h2>
+    <table id="employees-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="employees-tbody">
+        <!-- table rows will be added dynamically -->
+      </tbody>
+    </table>
   </main>
   <footer>
-    <p>Total Monthly</p>
+    <p id="total-monthly">Total Monthly: $0</p>
   </footer>
+
+  <script src="server/public/scripts/client.js"></script>
 </body>
 </html>
