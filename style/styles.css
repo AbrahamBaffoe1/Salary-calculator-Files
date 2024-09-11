@@ -55,13 +55,13 @@ input[type="text"], input[type="number"] {
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
-  border-color: #4CAF50;
+  border-color: #122812;
   outline: none;
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
 }
 
 button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #103d12;
   color: white;
   padding: 14px 22px;
   border: none;
@@ -95,7 +95,7 @@ th, td {
 }
 
 th {
-  background-color: #4CAF50;
+  background-color: #123113;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -114,7 +114,7 @@ tr:hover td {
 }
 
 .delete-btn {
-  background-color: #ff4d4d;
+  background-color: #871515;
   color: white;
   padding: 8px 16px;
   border: none;
