@@ -6,7 +6,7 @@ const port = 5001;
 
 
 app.get('/index', (req, res) => {
-    res.sendFile(__dirname + '/index');
+    res.sendFile(__dirname + '../index');
   });
 
 app.use(express.static('server/server'));

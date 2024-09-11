@@ -1,6 +1,4 @@
-// Get references to the form, table, and total monthly element
 const form = document.getElementById('add-employee-form');
-const table = document.getElementById('employees-table');
 const tbody = document.getElementById('employees-tbody');
 const totalMonthlyElement = document.getElementById('total-monthly');
 
@@ -10,22 +8,29 @@ let employees = [];
 // Add event listener to the form
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const name = document.getElementById('name').value;
+  const firstName = document.getElementById('first-name').value;
+  const lastName = document.getElementById('last-name').value;
+  const employmentId = document.getElementById('employment-id').value;
+  const employment = document.getElementById('employment').value;
   const salary = parseInt(document.getElementById('salary').value);
-  addEmployee(name, salary);
+
+  addEmployee(firstName, lastName, employmentId, employment, salary);
   form.reset();
 });
 
 // Function to add an employee to the table and update the total monthly salary
-function addEmployee(name, salary) {
+function addEmployee(firstName, lastName, employmentId, employment, salary) {
+  const fullName = `${firstName} ${lastName}`; // Combine first and last name
   const newRow = document.createElement('tr');
   newRow.innerHTML = `
-    <td>${name}</td>
+    <td>${fullName}</td>
+    <td>${employmentId}</td>
+    <td>${employment}</td>
     <td>$${salary}</td>
     <td><button class="delete-btn">Delete</button></td>
   `;
   tbody.appendChild(newRow);
-  employees.push({ name, salary });
+  employees.push({ firstName, lastName, employmentId, employment, salary });
   updateTotalMonthly();
 }
 
