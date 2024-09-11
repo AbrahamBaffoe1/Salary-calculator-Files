@@ -20,7 +20,7 @@ header {
 }
 
 header:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(169, 153, 153, 0.2);
 }
 
 main {
@@ -128,7 +128,7 @@ tr:hover td {
 }
 
 .delete-btn:hover {
-  background-color: #ff1a1a;
+  background-color: #f70c0c;
   transform: scale(1.05);
 }
 
@@ -137,9 +137,14 @@ tr:hover td {
 }
 
 footer {
+  background-color: #130a0a39;
+  align-items: center;
   color: black;
   padding: 15px;
+  margin-right: 200px;
+  margin-left: 200px;
   text-align: right;
+  
   margin-top: 30px;
   transition: box-shadow 0.3s;
 }
