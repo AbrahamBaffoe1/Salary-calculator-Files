@@ -34,6 +34,17 @@ function addEmployee(firstName, lastName, employmentId, employment, salary) {
   updateTotalMonthly();
 }
 
+// Add multiple employees
+const multipleEmployees = [
+  { firstName: 'John', lastName: 'Doe', employmentId: '123', employment: 'Full-time', salary: 5000 },
+  { firstName: 'Jane', lastName: 'Doe', employmentId: '456', employment: 'Part-time', salary: 3000 },
+  // Add more employees to the array
+];
+
+multipleEmployees.forEach((employee) => {
+  addEmployee(employee.firstName, employee.lastName, employee.employmentId, employee.employment, employee.salary);
+});
+
 // Function to update the total monthly salary
 function updateTotalMonthly() {
   const totalAnnual = employees.reduce((acc, curr) => acc + curr.salary, 0);
