@@ -4,7 +4,8 @@
   "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "start": "node server/server.js"
   },
   "author": "",
   "license": "ISC",

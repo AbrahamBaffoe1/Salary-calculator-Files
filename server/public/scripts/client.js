@@ -27,7 +27,7 @@ function addEmployee(firstName, lastName, employmentId, employment, salary) {
     <td>${employmentId}</td>
     <td>${employment}</td>
     <td>$${salary}</td>
-    <td><button class="delete-btn">Delete</button></td>
+    <td><button class="delete-btn" data-testid="delete-button">Delete</button></td>
   `;
   tbody.appendChild(newRow);
   employees.push({ firstName, lastName, employmentId, employment, salary });
@@ -36,8 +36,16 @@ function addEmployee(firstName, lastName, employmentId, employment, salary) {
 
 // Function to update the total monthly salary
 function updateTotalMonthly() {
-  const totalMonthly = employees.reduce((acc, curr) => acc + curr.salary, 0);
-  totalMonthlyElement.textContent = `Total Monthly: $${totalMonthly}`;
+  const totalAnnual = employees.reduce((acc, curr) => acc + curr.salary, 0);
+  const totalMonthly = totalAnnual / 12;
+  totalMonthlyElement.textContent = `Total Monthly: $${totalMonthly.toFixed(2)}`;
+
+  // Apply 'over-budget' class if total monthly exceeds $20,000
+  if (totalMonthly > 20000) {
+    totalMonthlyElement.classList.add('over-budget');
+  } else {
+    totalMonthlyElement.classList.remove('over-budget');
+  }
 }
 
 // Add event listener to the delete buttons
